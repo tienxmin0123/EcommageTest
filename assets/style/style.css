@@ -66,6 +66,11 @@ h6 {
   max-width: 1200px;
   margin: 0 auto;
 }
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 20px;
+  }
+}
 
 .product {
   padding: 4rem 0;
@@ -88,6 +93,20 @@ h6 {
   text-transform: uppercase;
   cursor: pointer;
 }
+@media (max-width: 767px) {
+  .product__sidebar__link {
+    padding: 0 2rem;
+    font-size: 1.6rem;
+    line-height: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .product__sidebar__link {
+    padding: 0 1rem;
+    font-size: 1.4rem;
+    line-height: 14px;
+  }
+}
 .product__sidebar__link.active {
   color: #EE2E24;
 }
@@ -106,15 +125,26 @@ h6 {
   transition: all 0.5s ease;
 }
 .product__list {
+  display: none;
   position: relative;
-  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
 }
+.product__list.active {
+  display: flex;
+}
+.product__list.best-selling .product__item, .product__list.hot-deal .product__item {
+  display: flex;
+}
+@media (max-width: 767px) {
+  .product__list__btn {
+    display: none;
+  }
+}
 .product__list__btn__arrow {
   position: absolute;
-  top: 50%;
+  top: 44%;
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
@@ -127,10 +157,10 @@ h6 {
   cursor: pointer;
 }
 .product__list__btn__arrow.left {
-  left: 0;
+  left: -20px;
 }
 .product__list__btn__arrow.right {
-  right: 0;
+  right: -20px;
 }
 .product__list__btn__arrow svg {
   color: #fff;
@@ -140,8 +170,29 @@ h6 {
   color: #EE2E24;
 }
 .product__item {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 25%;
   transition: all 0.5s ease;
+}
+@media (max-width: 767px) {
+  .product__item {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .product__item {
+    width: 100%;
+  }
+}
+.product__item__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .product__item__content {
   display: flex;
@@ -154,6 +205,7 @@ h6 {
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  padding: 1.2rem 0 0 0;
 }
 .product__item__price, .product__item__action {
   color: #EE2E24;
@@ -171,19 +223,32 @@ h6 {
 .product__btn {
   display: flex;
   justify-content: center;
-  margin: 30px 0 0 0;
+  margin: 38px 0 0 0;
 }
 .product__btn__link {
   display: flex;
   align-items: center;
-  font-size: 1.4rem;
   color: #EE2E24;
-  padding: 10px 30px;
+  padding: 11px 30px 11px 25px;
   background: #FFFFFF;
   border: 1px solid #EE2E24;
   border-radius: 20px;
   text-transform: uppercase;
   transition: all 0.5s ease;
+  cursor: pointer;
+}
+.product__btn__link span {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+.product__btn__link svg {
+  width: 1rem;
+}
+.product__btn__link svg.arrow {
+  transform: translateX(5px);
+}
+.product__btn__link:hover svg {
+  fill: #fff;
 }
 .product__btn__link:hover {
   color: #fff;
