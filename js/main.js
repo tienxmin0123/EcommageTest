@@ -10,7 +10,7 @@ const handleSliderShow = () => {
 handleSliderShow();
 
 const handleMoveLeft = () => {
-  if (left >= 3 && right >= 6) {
+  if (left >= 2 && right >= 5) {
     document.querySelector(`.product__item-${right}`).style.display = "none";
     left -= 1;
     right -= 1;
