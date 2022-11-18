@@ -1,0 +1,124 @@
+.product{
+  padding: 4rem 0;
+  &__sidebar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #F99B2A;
+    &__link{
+      position: relative;
+      padding: 0 3rem;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 36px;
+      text-align: center;
+      text-transform: uppercase;
+      cursor: pointer;
+      &.active{
+        color: $primaryColor;
+        &::after{
+          width: 100%;
+        }
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 3px;
+        background: $primaryColor;
+        transition: all .5s ease;
+      }
+    }
+  }
+  &__list{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    &__btn{
+      &__arrow{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #F99B2A;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        cursor: pointer;
+        &.left{
+          left: 0;
+        }
+        &.right{
+          right: 0;
+        }
+        svg{
+          color: #fff;
+          transition: all .5s ease;
+        }
+        &:hover svg{
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+  &__item{
+    width: calc(100% / 4);
+    transition: all .5s ease;
+    &__content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    &__title{
+      color: #000000;
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    &__price,&__action{
+      color: $primaryColor;
+    }
+    &__action{
+      text-transform: uppercase;
+      display: none;
+    }
+    &:hover &__price{
+      display: none;
+    }
+    &:hover &__action{
+      display: block;
+    }
+  }
+  &__btn{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 0 0;
+    &__link{
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+      color: $primaryColor;
+      padding: 10px 30px;
+      background: #FFFFFF;
+      border: 1px solid $primaryColor;
+      border-radius: 20px;
+      text-transform: uppercase;
+      transition: all .5s ease;
+      &:hover{
+        color: #fff;
+        background: $primaryColor;
+      }
+    }
+  }
+}
